@@ -583,6 +583,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 628585010789801601, guid: 56ead9dc16628174989544076e2522d7, type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 712318063}
+    - target: {fileID: 628585010789801601, guid: 56ead9dc16628174989544076e2522d7, type: 3}
       propertyPath: OnGrab.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -960,6 +964,10 @@ PrefabInstance:
       propertyPath: squeezeButton
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 628585010789801601, guid: 393566584cd7aae4e92c16be3dd85bae, type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 1179023074}
     - target: {fileID: 628585010789801601, guid: 393566584cd7aae4e92c16be3dd85bae, type: 3}
       propertyPath: OnGrab.m_PersistentCalls.m_Calls.Array.size
       value: 1
