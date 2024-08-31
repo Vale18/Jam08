@@ -17,7 +17,7 @@ MonoBehaviour:
   isHandTracking: 0
   isCameraSubsystem: 0
   isEyeTrackingCalibration: 0
-  displayFrequency: 0
+  displayFrequency: 90
   contentProtectFlags: 0
   foveationEnable: 0
   foveatedRenderingMode: 0
