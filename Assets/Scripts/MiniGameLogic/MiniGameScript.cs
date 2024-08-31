@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MiniGameScript : MonoBehaviour
 {
-    public string description;
+    public string description = "Bringe Müll weg";
     public int happiness;
     public float spawnTime;
     public int maxDuration;
