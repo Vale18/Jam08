@@ -2,9 +2,13 @@ using UnityEngine;
 
 public class MiniGameScript : MonoBehaviour
 {
+    public string description;
+    public int happiness;
+    public float spawnTime;
+    public int maxDuration;
     public virtual void OnStart()
     {
-        
+        spawnTime = Time.time;
     }
     public virtual void Reset()
     {

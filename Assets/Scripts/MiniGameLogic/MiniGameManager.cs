@@ -6,7 +6,7 @@ using UnityEngine;
 public class MiniGameManager : MonoBehaviour
 {
     public static MiniGameManager instance;
-    public static List<MiniGameScript> reserveMiniGames = new List<MiniGameScript>();
+    public static List<MiniGameScript> availableMiniGames = new List<MiniGameScript>();
     public static List<MiniGameScript> openMiniGames = new List<MiniGameScript>();
     void Awake()
     {
@@ -16,8 +16,7 @@ public class MiniGameManager : MonoBehaviour
             DestroyImmediate(this);
         }
         instance = this;
-        reserveMiniGames = FindObjectsByType<MiniGameScript>(FindObjectsInactive.Include, FindObjectsSortMode.None).ToList();
-
+        availableMiniGames = FindObjectsByType<MiniGameScript>(FindObjectsInactive.Include, FindObjectsSortMode.None).ToList();
     }
     public void OnEnable()
     {
@@ -32,9 +31,9 @@ public class MiniGameManager : MonoBehaviour
     public void SpawnNewMiniGame()
     {
         Debug.Log("Spawning next minigame");
-        if (reserveMiniGames.Count > 0)
+        if (availableMiniGames.Count > 0)
         {
-            MiniGameScript nextMiniGame = reserveMiniGames[Random.Range(0, reserveMiniGames.Count)];
+            MiniGameScript nextMiniGame = availableMiniGames[Random.Range(0, availableMiniGames.Count)];
             SpawnNewMiniGame(nextMiniGame);
         }
         else
@@ -46,7 +45,7 @@ public class MiniGameManager : MonoBehaviour
     public static void SpawnNewMiniGame(MiniGameScript minigame)
     {
         openMiniGames.Add(minigame);
-        reserveMiniGames.Remove(minigame);
+        availableMiniGames.Remove(minigame);
         minigame.OnStart();
     }
     public static void MiniGameCompleted(MiniGameScript minigame)
@@ -54,7 +53,7 @@ public class MiniGameManager : MonoBehaviour
         if (openMiniGames.Contains(minigame))
         {
             openMiniGames.Remove(minigame);
-            reserveMiniGames.Add(minigame);
+            availableMiniGames.Add(minigame);
             //add completed sound
             //change ui
         }
