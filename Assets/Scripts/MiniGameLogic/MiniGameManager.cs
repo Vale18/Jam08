@@ -24,7 +24,7 @@ public class MiniGameManager : MonoBehaviour
     }
     public void DelayMiniGameSpawn()
     {
-        int delay = Random.Range(1, 4);
+        int delay = Random.Range(5, 20);
         Debug.Log("Delaying next minigame for " + delay + " seconds");
         instance.Invoke("SpawnNewMiniGame", delay);
     }
